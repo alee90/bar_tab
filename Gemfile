@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#HTTPARTY
+gem 'httparty'
 # Devise
 gem 'devise'
 # Yelp

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get 'home' => 'home#home'
+  get 'reel' => 'users#show'
+  get '/users/:id/search', to: 'users#search', as: 'bar_search'
+
   resources :users do
     resources :bars
   end
@@ -24,7 +27,9 @@ end
 #                          PUT    /users(.:format)                        devise/registrations#update
 #                          DELETE /users(.:format)                        devise/registrations#destroy
 #                     root GET    /                                       home#index
-#                   secure GET    /secure(.:format)                       home#secure
+#                     home GET    /home(.:format)                         home#home
+#                     reel GET    /reel(.:format)                         users#show
+#               bar_search GET    /users/:id/search(.:format)             users#search
 #                user_bars GET    /users/:user_id/bars(.:format)          bars#index
 #                          POST   /users/:user_id/bars(.:format)          bars#create
 #             new_user_bar GET    /users/:user_id/bars/new(.:format)      bars#new

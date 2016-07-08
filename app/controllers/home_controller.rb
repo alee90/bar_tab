@@ -4,11 +4,11 @@ class HomeController < ApplicationController
 	def index
 		if current_user
 			puts "I'm logged in as #{current_user.email}"
-			redirect_to '/secure'
 		else 
 			puts "I'm not logged in"
 		end
 	end
+
 
 	def home
 		id = current_user.id

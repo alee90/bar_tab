@@ -1,0 +1,5 @@
+<%= form_for [@user, @bar] do |form| %>
+	Name: <%= form.text_field :name %><br/>
+	Total: <%= form.text_field :total %><br/>
+	<%= form.submit %>
+<% end %>

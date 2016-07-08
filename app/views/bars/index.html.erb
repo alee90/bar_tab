@@ -1,0 +1,7 @@
+<h1>bar index</h1>
+<% @bars.each do |bar| %>
+	<%= bar.name %>
+	$<%= bar.total %><br>
+<% end %>
+
+<%= link_to 'new entry', new_user_bar_path(@user) %>
