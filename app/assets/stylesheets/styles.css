@@ -1,4 +1,7 @@
-
+body{
+	background-color: black;
+	z-index: 1;
+}
 @media only screen and (max-width: 750px) {
 	body{
 		text-align: center;
@@ -20,7 +23,7 @@
 	}
 
 	#bar-name-id{
-		width: 15em;
+		width: 12em;
 		height: 3em;
 		font-size: 1.35em;
 		border: 1px solid black;
@@ -31,5 +34,10 @@
 		height: 2.5em;
 		font-size: 1.35em;
 		border: 1px solid black;		
+	}
+
+	#body_main{
+		padding: 4em;
+		border: 1px solid black;
 	}
 }

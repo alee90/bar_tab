@@ -2,21 +2,23 @@
 <html>
 <head>
   <title>Bar Tab</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <p>
 <% if user_signed_in? %>
-  You are: <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  You are: <strong><%= current_user.email %></strong><br>
+  <%= link_to 'Update Profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 <% else %>
 
 <% end %>
 </p>
-<%= yield %>
 
+<div id='body_main'>
+	<%= yield %>
+</div>
 </body>
 </html>
