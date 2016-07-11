@@ -1,4 +1,6 @@
-<h2>herro user show </h2>
+<h2>Hello, <%= current_user.email %> </h2>
 
-<%= link_to 'bars', user_bars_path(@user.id) %>
-<%= link_to 'new entry', new_user_bar_path(@user) %>
+<div class='index-links'>
+<h3><%= link_to 'List of Your Saved Bars', user_bars_path(@user.id) %></h3><br><br>
+<h4><%= link_to 'New Bar!', new_user_bar_path(@user) %></h4>
+</div>

@@ -1,7 +1,10 @@
-<h1>bar index</h1>
-<% @bars.each do |bar| %>
-	<%= bar.name %>
-	$<%= bar.total %><br>
-<% end %>
+<h1>Bar Index</h1>
 
-<%= link_to 'new entry', new_user_bar_path(@user) %>
+<ul class = 'bar-list'>
+	<% @bars.each do |bar| %>
+	<li><h2><%= link_to bar.name, user_bar_entries_path(@user, bar.id) %></h2></li>
+	<li><%= link_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), :method => 'put' %></li><br>
+<% end %>
+</ul>
+
+<%= link_to 'New entry', new_user_bar_path(@user) %>

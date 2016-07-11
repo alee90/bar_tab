@@ -1,0 +1,4 @@
+<%= form_for [@user, @bar, @entry] do |form| %>
+	Entry: <br><br>$<%= form.text_field :entry %><br/><br>
+	<%= form.submit %><br><br>
+<% end %>

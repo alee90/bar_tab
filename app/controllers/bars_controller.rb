@@ -1,13 +1,10 @@
 class BarsController < ApplicationController
 	before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-	before_action :show_bar, only: [:show, :edit, :update, :destroy]
+	before_action :show_bar, only: [:show, :edit, :update, :destroy, :remove_bar]
 	def index
 		@user = User.find(params[:user_id])
 		@bars = @user.bars
-	end
-
-	def show
-		
+		# @bar = Bar.find(params[:bar_id])
 	end
 
 	def new
@@ -16,12 +13,12 @@ class BarsController < ApplicationController
 	end
 
 	def create
-		user = User.find(params[:user_id])
+		@user = User.find(params[:user_id])
 		@bar = Bar.new(bar_params)
 
 		if @bar.save
-			user.bars << @bar
-			redirect_to bar_url
+			@user.bars << @bar
+			redirect_to new_user_bar_entry_path(:bar_id => @bar.id)
 		else
 			render :root
 		end
@@ -43,6 +40,12 @@ class BarsController < ApplicationController
 		redirect_to users_url
 	end
 
+	def remove_bar
+		user = User.find(params[:user_id])
+		user.bars.delete(@bar)
+		redirect_to user_bars_path
+	end
+
 
 	# PRIVATE METHODS
 	private
@@ -52,7 +55,11 @@ class BarsController < ApplicationController
 	end
 
 	def bar_params
-		params.require(:bar).permit(:name, :total, :users)
+		params.require(:bar).permit(:name, :users)
+	end
+
+	def entry_params
+		params.require(:entry).permit(:entry, :bars, :users)
 	end
 
 end

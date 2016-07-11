@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 	def search
 
 	end
+
 	private
 
 	def show_user

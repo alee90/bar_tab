@@ -1,0 +1,19 @@
+<% total = 0 %>
+<% @bar.entries.each do |entry| %>
+	<% total = total + entry.entry %>
+<% end %>
+
+<h1><%= @bar.name %></h1>
+<h3>Total spent: $<%= total %></h3>
+<h4>Entries</h4>
+<ul>
+<% @bar.entries.each do |entry| %>
+	<% x = entry.created_at.to_i %>
+	<li><h5>$<%= entry.entry.round(2) %></h5></li>
+	<li>Created at: <%= Time.at(x).strftime("%B %e, %Y at %I:%M %p") %></li>
+<% end %>
+<br>
+
+
+<%= link_to 'Back', user_bars_path(@user) %><br><br>
+<%= link_to 'New Entry!', new_user_bar_entry_path(:bar_id => @bar.id) %>
