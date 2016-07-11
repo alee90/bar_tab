@@ -12,8 +12,9 @@
 	<li><h5>$<%= entry.entry.round(2) %></h5></li>
 	<li>Created at: <%= Time.at(x).strftime("%B %e, %Y at %I:%M %p") %></li>
 <% end %>
-<br>
+<br><br>
 
 
-<%= link_to 'Back', user_bars_path(@user) %><br><br>
-<%= link_to 'New Entry!', new_user_bar_entry_path(:bar_id => @bar.id) %>
+<%= button_to 'Back', user_bars_path(@user), :method => 'get' %><br>
+<%= button_to 'New Entry!', new_user_bar_entry_path(:bar_id => @bar.id), :method => 'get' %><br>
+<%= button_to 'Home!', user_path(@user), :method => 'get' %>

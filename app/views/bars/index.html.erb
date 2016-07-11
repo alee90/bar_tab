@@ -3,8 +3,8 @@
 <ul class = 'bar-list'>
 	<% @bars.each do |bar| %>
 	<li><h2><%= link_to bar.name, user_bar_entries_path(@user, bar.id) %></h2></li>
-	<li><%= link_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), :method => 'put' %></li><br>
+	<li><%= link_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
 <% end %>
 </ul>
 
-<%= link_to 'New entry', new_user_bar_path(@user) %>
+<%= button_to 'New Entry', new_user_bar_path(@user), :method => 'get' %>

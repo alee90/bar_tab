@@ -1,6 +1,7 @@
-<h2>Hello, <%= current_user.email %> </h2>
+<h1>Hello, <%= current_user.email %> </h1>
+<h2>Welcome to Bar Tab</h2>
 
 <div class='index-links'>
-<h3><%= link_to 'List of Your Saved Bars', user_bars_path(@user.id) %></h3><br><br>
-<h4><%= link_to 'New Bar!', new_user_bar_path(@user) %></h4>
+<h2><%= link_to 'Add New Bar!', new_user_bar_path(@user) %></h4>
+<h2><%= link_to 'List of Your Saved Bars', user_bars_path(@user.id) %></h2><br><br>
 </div>

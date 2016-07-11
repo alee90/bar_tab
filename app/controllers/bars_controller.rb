@@ -55,7 +55,7 @@ class BarsController < ApplicationController
 	end
 
 	def bar_params
-		params.require(:bar).permit(:name, :users)
+		params.require(:bar).permit(:name)
 	end
 
 	def entry_params

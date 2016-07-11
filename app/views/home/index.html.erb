@@ -1,1 +1,11 @@
-<h1>HERRO PRISS ROG IN</h1>
+<h1>Bar Tab</h1>
+<style>
+	#sign-in-links{
+		margin-top: 6em;
+	}
+</style>
+
+<div id='sign-in-links'>
+	<h3><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></h3>
+	<h3><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></h3>
+</div>
