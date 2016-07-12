@@ -5,4 +5,8 @@ class Bar < ActiveRecord::Base
 	accepts_nested_attributes_for :entries
 
 	belongs_to :user
+
+	before_save do
+    	self.name = self.name.to_s.split(',').first
+  end
 end

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'reel' => 'users#show'
   get '/users/:id/search', to: 'users#search', as: 'bar_search'
   put '/users/:user_id/bars/:id/remove' => 'bars#remove_bar', as: 'remove_bar'
+  get '/search' => 'yelp#woop'
+  get '/yelp/search/:data' => 'yelp#search'
+
 
 
   resources :users do
@@ -12,6 +15,9 @@ Rails.application.routes.draw do
       resources :entries
     end
   end
+
+  resources :yelp
+
 end
 
 

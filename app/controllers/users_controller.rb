@@ -6,9 +6,6 @@ class UsersController < ApplicationController
 		puts params
 		puts '======='
 	end
-	def search
-
-	end
 
 	private
 

@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :bars
   has_many :entries, through: :bars
+
 end

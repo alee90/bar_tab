@@ -1,8 +1,8 @@
-body{
-	background-color: black;
-	z-index: 1;
-}
+
 @media only screen and (max-width: 750px) {
+	.title{
+		font-size: 4em;
+	}
 	body{
 		text-align: center;
 		background-color: papayawhip;
