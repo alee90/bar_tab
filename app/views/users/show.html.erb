@@ -1,6 +1,6 @@
 <h2 class='title'>Bar Tab</h2>
 
 <div class='index-links'>
-<h2><%= link_to 'Add New Bar!', new_user_bar_path(@user) %></h4>
-<h2><%= link_to 'List of Your Saved Bars', user_bars_path(@user.id) %></h2><br>
+<%= button_to 'New Entry', new_user_bar_path(@user), :method => 'get' %><br>
+<%= button_to 'Saved Bars', user_bars_path(@user.id), :method => 'get' %><br>
 </div>

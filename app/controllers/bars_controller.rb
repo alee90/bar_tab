@@ -17,7 +17,7 @@ class BarsController < ApplicationController
 	def index
 		@user = User.find(params[:user_id])
 		@bars = @user.bars
-		@totals = session[:total]
+		totals = session[:total]
 		# @bar = Bar.find(params[:bar_id])
 	end
 
@@ -35,7 +35,8 @@ class BarsController < ApplicationController
 			@user.bars << @bar
 			redirect_to new_user_bar_entry_path(:bar_id => @bar.id)
 		else
-			render :root
+			flash.now[:notice] = "DUPLICATE!  ENTER ANOTHER"
+			render :new
 		end
 	end
 

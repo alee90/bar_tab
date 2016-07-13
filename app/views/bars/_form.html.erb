@@ -1,6 +1,7 @@
 
 <%= form_for [@user, @bar] do |form| %>
-	Name:<br><br> <%= form.text_field :name, id: 'bar-name-id' %><br/><br>
+<%= form.label :name %>:
+<br> <%= form.text_field :name, id: 'bar-name-id' %><br><br>
 	<%= form.submit %><br>
 <% end %>
 

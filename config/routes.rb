@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get 'home' => 'home#home'
-  get 'reel' => 'users#show'
   get '/users/:id/search', to: 'users#search', as: 'bar_search'
   put '/users/:user_id/bars/:id/remove' => 'bars#remove_bar', as: 'remove_bar'
   get '/search' => 'yelp#woop'
   get '/yelp/search/:data' => 'yelp#search'
+  put '/users/:user_id/bars/:bar_id/entries/:id/remove' => 'entries#remove_entry', as: 'remove_entry'
+
 
 
 

@@ -27,7 +27,7 @@ class EntriesController < ApplicationController
 			@bar.entries << @entry
 			redirect_to user_bar_entries_url
 		else
-			render :root
+			render :new
 		end
 	end
 
@@ -47,6 +47,12 @@ class EntriesController < ApplicationController
 		redirect_to users_url
 	end
 
+	def remove_entry
+		@bar = Bar.find(params[:bar_id])
+		@entry = Entry.find(params[:id])
+		@bar.entries.delete(@entry)
+		redirect_to user_bar_entries_url
+	end
 
 	# PRIVATE METHODS
 	private
