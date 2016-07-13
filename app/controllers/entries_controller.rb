@@ -6,14 +6,8 @@ class EntriesController < ApplicationController
 		@user = User.find(params[:user_id])
 		@bar = Bar.find(params[:bar_id])
 		@entries = Entry.all
-		total = 0
-		# def x 
-		# 	@bar. entries.each do |entry|
-		# 		total = total + entry.entry.round(2).to_f
-		# 		print total
-		# 	end
-		# end
 	end
+	
 	def show
 		@entries = Entry.all
 	end

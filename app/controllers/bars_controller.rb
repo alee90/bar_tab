@@ -17,6 +17,7 @@ class BarsController < ApplicationController
 	def index
 		@user = User.find(params[:user_id])
 		@bars = @user.bars
+		@totals = session[:total]
 		# @bar = Bar.find(params[:bar_id])
 	end
 
@@ -29,7 +30,6 @@ class BarsController < ApplicationController
 	def create
 		@user = User.find(params[:user_id])
 		@bar = Bar.new(bar_params)
-
 		if @bar.save
 			@bar.name.split(',').first
 			@user.bars << @bar
