@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-	before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+	before_action :authenticate_user!
 	before_action :show_entry, only: [:show, :edit, :update, :destroy]
 
 	def index
@@ -27,6 +27,7 @@ class EntriesController < ApplicationController
 			@bar.entries << @entry
 			redirect_to user_bar_entries_url
 		else
+			flash.now[:notice] = "YOU SPENT TOO MUCH!"
 			render :new
 		end
 	end

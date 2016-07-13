@@ -13,8 +13,8 @@
 	<% x = entry.entry %>
 	<% y = '%.2f' % x %>
 	<li><h5>$<%= y %></h5></li>
-	<li>Created at: <%= Time.at(entry.created_at).strftime("%B %e, %Y at %I:%M %p") %></li>
-	<li><%= link_to "Remove Entry", remove_entry_path(user_id: @user.id, bar_id: @bar.id, id: entry.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li>
+	<li>Created at: <%= Time.at(entry.created_at).strftime("%B %e, %Y at %I:%M %p") %></li><br>
+	<li><%= button_to "Remove Entry", remove_entry_path(user_id: @user.id, bar_id: @bar.id, id: entry.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li>
 <% end %>
 <br><br>
 
