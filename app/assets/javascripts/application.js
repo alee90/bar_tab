@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require underscore
 //= require jquery.geocomplete
+//= require_directory 
+//= require turbolinks

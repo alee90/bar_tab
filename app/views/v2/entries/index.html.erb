@@ -1,0 +1,24 @@
+<% total = 0 %>
+<% @bar.entries.each do |entry| %>
+	<% total = total + entry.entry %>
+<% end %>
+
+<% tot = '%.2f' % total %>
+
+<h1><%= @bar.name %></h1>
+<h3>Total spent: $<%= tot %></h3>
+<h4>Entries</h4>
+<ul>
+<% @bar.entries.each do |entry| %>
+	<% x = entry.entry %>
+	<% y = '%.2f' % x %>
+	<li><h5>$<%= y %></h5></li>
+	<li>Created at: <%= Time.at(entry.created_at).strftime("%B %e, %Y at %I:%M %p") %></li><br>
+	<li><%= button_to "Remove Entry", remove_entry_path(user_id: @user.id, bar_id: @bar.id, id: entry.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li>
+<% end %>
+<br><br>
+
+
+<%= button_to 'Back', user_bars_path(@user), :method => 'get' %><br>
+<%= button_to 'New Entry!', new_user_bar_entry_path(:bar_id => @bar.id), :method => 'get' %><br>
+<%= button_to 'Home!', user_path(@user), :method => 'get' %>

@@ -1,0 +1,7 @@
+<%= form_for [@user, @bar] do |form| %>
+<%= form.label :name %>:
+<br> <%= form.text_field :name, id: 'bar-name-id' %><br><br>
+	<%= form.submit %><br>
+<% end %>
+
+<%= javascript_include_tag 'input' %>

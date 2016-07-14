@@ -14,12 +14,14 @@
  *= require bootstrap
  *= require styles
  */
+
 html{
 	padding: 3em;
 }
 
 button{
 	margin-top: 2em;
+	margin-bottom: 2em;
 	border: 2px solid black;
 }
 
@@ -27,4 +29,5 @@ input{
 	border: 2px solid black;
 	margin-top: 2em;
 	background-color: #F5FFFA;
+	margin-bottom: 2em;
 }

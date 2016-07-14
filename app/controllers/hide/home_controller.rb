@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	before_action :authenticate_user!, only: :secure
+	before_action :authenticate_user!, only: :home
 
 	def index
 		if current_user

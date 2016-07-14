@@ -1,0 +1,50 @@
+@media only screen and (max-width: 750px) {
+	.title{
+		font-size: 4em;
+	}
+	body{
+		text-align: center;
+		background-color: papayawhip;
+	}
+
+	.actions{
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	.index-links{
+		margin-top: 3em;
+	}
+
+	ul{
+		padding: 0;
+		list-style-type: none
+	}
+
+	#bar-name-id{
+		width: 12em;
+		height: 3em;
+		font-size: 1.35em;
+		border: 1px solid black;
+	}
+
+	#entry-name-id{
+		width: 10em;
+		height: 2.5em;
+		font-size: 1.35em;
+		border: 1px solid black;		
+	}
+
+	#body_main{
+		padding: 4em;
+		border: 1px solid black;
+		background: rgba(201,201,201,1);
+		background: -moz-linear-gradient(left, rgba(201,201,201,1) 0%, rgba(199,199,199,1) 14%, rgba(196,196,196,1) 31%, rgba(186,186,186,1) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(201,201,201,1)), color-stop(14%, rgba(199,199,199,1)), color-stop(31%, rgba(196,196,196,1)), color-stop(100%, rgba(186,186,186,1)));
+		background: -webkit-linear-gradient(left, rgba(201,201,201,1) 0%, rgba(199,199,199,1) 14%, rgba(196,196,196,1) 31%, rgba(186,186,186,1) 100%);
+		background: -o-linear-gradient(left, rgba(201,201,201,1) 0%, rgba(199,199,199,1) 14%, rgba(196,196,196,1) 31%, rgba(186,186,186,1) 100%);
+		background: -ms-linear-gradient(left, rgba(201,201,201,1) 0%, rgba(199,199,199,1) 14%, rgba(196,196,196,1) 31%, rgba(186,186,186,1) 100%);
+		background: linear-gradient(to right, rgba(201,201,201,1) 0%, rgba(199,199,199,1) 14%, rgba(196,196,196,1) 31%, rgba(186,186,186,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#bababa', GradientType=1 );
+	}
+}

@@ -1,0 +1,19 @@
+<h1>Bar Index</h1>
+
+<ul class = 'bar-list'>
+	<% @bars.each do |bar| %>
+	<li><h2><%= link_to bar.name, user_bar_entries_path(@user, bar.id) %></h2></li>
+	<% total = 0 %>
+	<% bar.entries.each do |entry| %>
+		<% total += entry.entry %>
+	<% end %>
+	<% tot = '%.2f' % total %>
+	<li><h3>Total Spent:</h3><h4>$<%= tot %></h4></li>
+	<li><%= link_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
+<% end %>
+</ul>
+
+<%= button_to 'New Entry', bar_new_path(@user), :method => 'get' %><br>
+<%= button_to 'Home!', user_path(@user), :method => 'get' %>
+
+

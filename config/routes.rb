@@ -1,68 +1,72 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'home#index'
-  get 'home' => 'home#home'
-  get '/users/:id/search', to: 'users#search', as: 'bar_search'
-  put '/users/:user_id/bars/:id/remove' => 'bars#remove_bar', as: 'remove_bar'
-  get '/search' => 'yelp#woop'
-  get '/yelp/search/:data' => 'yelp#search'
-  put '/users/:user_id/bars/:bar_id/entries/:id/remove' => 'entries#remove_entry', as: 'remove_entry'
-
-
-
-
-  resources :users do
-    resources :bars do
-      resources :entries
+  scope module: :v1 do
+    devise_for :users
+    root 'home#index'
+    get '/users/:user_id/bars/new', to: 'bars#new', as: 'bar_new'
+    put '/users/:user_id/bars/:id/remove' => 'bars#remove_bar', as: 'remove_bar'
+    put '/users/:user_id/bars/:bar_id/entries/:id/remove' => 'entries#remove_entry', as: 'remove_entry'
+    get '/users/:id' => 'users#show'
+    resources :users do
+      resources :bars do
+        resources :entries
+      end
     end
   end
 
-  resources :yelp
-
 end
 
-
-#                   Prefix Verb   URI Pattern                                             Controller#Action
-#         new_user_session GET    /users/sign_in(.:format)                                devise/sessions#new
-#             user_session POST   /users/sign_in(.:format)                                devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)                               devise/sessions#destroy
-#            user_password POST   /users/password(.:format)                               devise/passwords#create
-#        new_user_password GET    /users/password/new(.:format)                           devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)                          devise/passwords#edit
-#                          PATCH  /users/password(.:format)                               devise/passwords#update
-#                          PUT    /users/password(.:format)                               devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)                                 devise/registrations#cancel
-#        user_registration POST   /users(.:format)                                        devise/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)                                devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)                                   devise/registrations#edit
-#                          PATCH  /users(.:format)                                        devise/registrations#update
-#                          PUT    /users(.:format)                                        devise/registrations#update
-#                          DELETE /users(.:format)                                        devise/registrations#destroy
-#                     root GET    /                                                       home#index
-#                     home GET    /home(.:format)                                         home#home
-#                     reel GET    /reel(.:format)                                         users#show
-#               bar_search GET    /users/:id/search(.:format)                             users#search
-#         user_bar_entries GET    /users/:user_id/bars/:bar_id/entries(.:format)          entries#index
-#                          POST   /users/:user_id/bars/:bar_id/entries(.:format)          entries#create
-#       new_user_bar_entry GET    /users/:user_id/bars/:bar_id/entries/new(.:format)      entries#new
-#      edit_user_bar_entry GET    /users/:user_id/bars/:bar_id/entries/:id/edit(.:format) entries#edit
-#           user_bar_entry GET    /users/:user_id/bars/:bar_id/entries/:id(.:format)      entries#show
-#                          PATCH  /users/:user_id/bars/:bar_id/entries/:id(.:format)      entries#update
-#                          PUT    /users/:user_id/bars/:bar_id/entries/:id(.:format)      entries#update
-#                          DELETE /users/:user_id/bars/:bar_id/entries/:id(.:format)      entries#destroy
-#                user_bars GET    /users/:user_id/bars(.:format)                          bars#index
-#                          POST   /users/:user_id/bars(.:format)                          bars#create
-#             new_user_bar GET    /users/:user_id/bars/new(.:format)                      bars#new
-#            edit_user_bar GET    /users/:user_id/bars/:id/edit(.:format)                 bars#edit
-#                 user_bar GET    /users/:user_id/bars/:id(.:format)                      bars#show
-#                          PATCH  /users/:user_id/bars/:id(.:format)                      bars#update
-#                          PUT    /users/:user_id/bars/:id(.:format)                      bars#update
-#                          DELETE /users/:user_id/bars/:id(.:format)                      bars#destroy
-#                    users GET    /users(.:format)                                        users#index
-#                          POST   /users(.:format)                                        users#create
-#                 new_user GET    /users/new(.:format)                                    users#new
-#                edit_user GET    /users/:id/edit(.:format)                               users#edit
-#                     user GET    /users/:id(.:format)                                    users#show
-#                          PATCH  /users/:id(.:format)                                    users#update
-#                          PUT    /users/:id(.:format)                                    users#update
-#                          DELETE /users/:id(.:format)                                    users#destroy
+#                   Prefix Verb   URI Pattern                                               Controller#Action
+#               home_index GET    /home(.:format)                                           v1/home#index
+#                          POST   /home(.:format)                                           v1/home#create
+#                 new_home GET    /home/new(.:format)                                       v1/home#new
+#                edit_home GET    /home/:id/edit(.:format)                                  v1/home#edit
+#                     home GET    /home/:id(.:format)                                       v1/home#show
+#                          PATCH  /home/:id(.:format)                                       v1/home#update
+#                          PUT    /home/:id(.:format)                                       v1/home#update
+#                          DELETE /home/:id(.:format)                                       v1/home#destroy
+#         new_user_session GET    /users/sign_in(.:format)                                  v1/sessions#new
+#             user_session POST   /users/sign_in(.:format)                                  v1/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format)                                 v1/sessions#destroy
+#            user_password POST   /users/password(.:format)                                 v1/passwords#create
+#        new_user_password GET    /users/password/new(.:format)                             v1/passwords#new
+#       edit_user_password GET    /users/password/edit(.:format)                            v1/passwords#edit
+#                          PATCH  /users/password(.:format)                                 v1/passwords#update
+#                          PUT    /users/password(.:format)                                 v1/passwords#update
+# cancel_user_registration GET    /users/cancel(.:format)                                   v1/registrations#cancel
+#        user_registration POST   /users(.:format)                                          v1/registrations#create
+#    new_user_registration GET    /users/sign_up(.:format)                                  v1/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)                                     v1/registrations#edit
+#                          PATCH  /users(.:format)                                          v1/registrations#update
+#                          PUT    /users(.:format)                                          v1/registrations#update
+#                          DELETE /users(.:format)                                          v1/registrations#destroy
+#                     root GET    /                                                         v1/home#index
+#               bar_search GET    /users/:id/search(.:format)                               v1/users#search
+#               remove_bar PUT    /users/:user_id/bars/:id/remove(.:format)                 v1/bars#remove_bar
+#                   search GET    /search(.:format)                                         v1/yelp#woop
+#                          GET    /yelp/search/:data(.:format)                              v1/yelp#search
+#             remove_entry PUT    /users/:user_id/bars/:bar_id/entries/:id/remove(.:format) v1/entries#remove_entry
+#                          GET    /users/:id(.:format)                                      v1/users#show
+#         user_bar_entries GET    /users/:user_id/bars/:bar_id/entries(.:format)            v1/entries#index
+#                          POST   /users/:user_id/bars/:bar_id/entries(.:format)            v1/entries#create
+#       new_user_bar_entry GET    /users/:user_id/bars/:bar_id/entries/new(.:format)        v1/entries#new
+#      edit_user_bar_entry GET    /users/:user_id/bars/:bar_id/entries/:id/edit(.:format)   v1/entries#edit
+#           user_bar_entry GET    /users/:user_id/bars/:bar_id/entries/:id(.:format)        v1/entries#show
+#                          PATCH  /users/:user_id/bars/:bar_id/entries/:id(.:format)        v1/entries#update
+#                          PUT    /users/:user_id/bars/:bar_id/entries/:id(.:format)        v1/entries#update
+#                          DELETE /users/:user_id/bars/:bar_id/entries/:id(.:format)        v1/entries#destroy
+#                user_bars GET    /users/:user_id/bars(.:format)                            v1/bars#index
+#                          POST   /users/:user_id/bars(.:format)                            v1/bars#create
+#             new_user_bar GET    /users/:user_id/bars/new(.:format)                        v1/bars#new
+#            edit_user_bar GET    /users/:user_id/bars/:id/edit(.:format)                   v1/bars#edit
+#                 user_bar GET    /users/:user_id/bars/:id(.:format)                        v1/bars#show
+#                          PATCH  /users/:user_id/bars/:id(.:format)                        v1/bars#update
+#                          PUT    /users/:user_id/bars/:id(.:format)                        v1/bars#update
+#                          DELETE /users/:user_id/bars/:id(.:format)                        v1/bars#destroy
+#                    users GET    /users(.:format)                                          v1/users#index
+#                          POST   /users(.:format)                                          v1/users#create
+#                 new_user GET    /users/new(.:format)                                      v1/users#new
+#                edit_user GET    /users/:id/edit(.:format)                                 v1/users#edit
+#                     user GET    /users/:id(.:format)                                      v1/users#show
+#                          PATCH  /users/:id(.:format)                                      v1/users#update
+#                          PUT    /users/:id(.:format)                                      v1/users#update
+#                          DELETE /users/:id(.:format)                                      v1/users#destroy

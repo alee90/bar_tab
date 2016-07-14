@@ -1,0 +1,4 @@
+<%= form_for [@user, @bar, @entry] do |form| %>
+	Entry: <br><strong>$</strong> <%= form.text_field :entry, id: 'entry-name-id' %><br><br>
+	<%= form.submit %><br><br>
+<% end %>
