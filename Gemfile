@@ -6,8 +6,6 @@ gem 'rails_12factor', group: :production
 gem 'httparty'
 # Devise
 gem 'devise'
-# Yelp
-gem 'yelp', require: 'yelp'
 # UNDERSCORE.JS
 gem 'underscore-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
