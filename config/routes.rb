@@ -16,14 +16,6 @@ Rails.application.routes.draw do
 end
 
 #                   Prefix Verb   URI Pattern                                               Controller#Action
-#               home_index GET    /home(.:format)                                           v1/home#index
-#                          POST   /home(.:format)                                           v1/home#create
-#                 new_home GET    /home/new(.:format)                                       v1/home#new
-#                edit_home GET    /home/:id/edit(.:format)                                  v1/home#edit
-#                     home GET    /home/:id(.:format)                                       v1/home#show
-#                          PATCH  /home/:id(.:format)                                       v1/home#update
-#                          PUT    /home/:id(.:format)                                       v1/home#update
-#                          DELETE /home/:id(.:format)                                       v1/home#destroy
 #         new_user_session GET    /users/sign_in(.:format)                                  v1/sessions#new
 #             user_session POST   /users/sign_in(.:format)                                  v1/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)                                 v1/sessions#destroy
@@ -40,10 +32,8 @@ end
 #                          PUT    /users(.:format)                                          v1/registrations#update
 #                          DELETE /users(.:format)                                          v1/registrations#destroy
 #                     root GET    /                                                         v1/home#index
-#               bar_search GET    /users/:id/search(.:format)                               v1/users#search
+#                  bar_new GET    /users/:user_id/bars/new(.:format)                        v1/bars#new
 #               remove_bar PUT    /users/:user_id/bars/:id/remove(.:format)                 v1/bars#remove_bar
-#                   search GET    /search(.:format)                                         v1/yelp#woop
-#                          GET    /yelp/search/:data(.:format)                              v1/yelp#search
 #             remove_entry PUT    /users/:user_id/bars/:bar_id/entries/:id/remove(.:format) v1/entries#remove_entry
 #                          GET    /users/:id(.:format)                                      v1/users#show
 #         user_bar_entries GET    /users/:user_id/bars/:bar_id/entries(.:format)            v1/entries#index
