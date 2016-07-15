@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-
+ruby '2.2.3'
+#HEROKU PREDEPLOY
+gem 'rails_12factor', group: :production
 #HTTPARTY
 gem 'httparty'
 # Devise
