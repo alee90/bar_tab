@@ -2,6 +2,10 @@ class HomeController < ApplicationController
 	before_action :authenticate_user!, only: :home
 
 	def index
+		if user_signed_in?
+      		redirect_to user_path
+    	end
+
 		if current_user
 			puts "I'm logged in as #{current_user.email}"
 		else 
