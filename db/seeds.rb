@@ -1,1 +1,2 @@
 Bar.delete_all
+Entry.delete_all

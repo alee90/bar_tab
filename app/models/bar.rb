@@ -1,5 +1,5 @@
 class Bar < ActiveRecord::Base
-	validates :name, uniqueness: true
+	validates :name, :uniqueness => true
 
 	has_many :entries
 	accepts_nested_attributes_for :entries

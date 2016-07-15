@@ -9,7 +9,7 @@
 	<% end %>
 	<% tot = '%.2f' % total %>
 	<li><h3>Total Spent:</h3><h4>$<%= tot %></h4></li>
-	<li><%= link_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
+	<li><%= button_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
 <% end %>
 </ul>
 
