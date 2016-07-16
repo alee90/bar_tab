@@ -1,5 +1,4 @@
 <h1>Bar List</h1>
-
 <ul class = 'bar-list'>
 	<% @bars.each do |bar| %>
 	<li><h2><%= link_to bar.name, user_bar_entries_path(@user, bar.id) %></h2></li>
@@ -9,11 +8,11 @@
 	<% end %>
 	<% tot = '%.2f' % total %>
 	<li><h3>Total Spent:</h3><h4>$<%= tot %></h4></li>
-	<li><%= button_to "Remove Bar", remove_bar_path(user_id: @user.id, id: bar.id), id: 'bar-index-remove', data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
+	<li><%= button_to "Remove", remove_bar_path(user_id: @user.id, id: bar.id), id: 'bar-index-remove', data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
 <% end %>
 </ul>
 <div id='bar-index-links'>
-<%= button_to 'Add Bar', new_user_bar_path(@user), id: 'bar-index-input', :method => 'get' %><br>
+<%= button_to 'Add Bar', new_user_bar_path(@user), id: 'bar-index-new', :method => 'get' %><br>
 <%= button_to 'Home!', user_path(@user), id: 'bar-index-input', :method => 'get' %>
 </div>
 

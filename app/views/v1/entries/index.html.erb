@@ -17,8 +17,8 @@
 	<li><%= button_to "Remove Entry", remove_entry_path(user_id: @user.id, bar_id: @bar.id, id: entry.id), data: { confirm: "Are you sure?" }, :method => 'put' %></li>
 <% end %>
 <br><br>
+<hr class='styler'>
 
-
-<%= button_to 'Bar Index', user_bars_path(@user), :method => 'get' %><br>
-<%= button_to 'New Entry!', new_user_bar_entry_path(:bar_id => @bar.id), :method => 'get' %><br>
-<%= button_to 'Home!', user_path(@user), :method => 'get' %>
+<%= button_to 'Bar Index', user_bars_path(@user), id: 'entries-links', :method => 'get' %><br>
+<%= button_to 'New Entry!', new_user_bar_entry_path(:bar_id => @bar.id), id: 'entries-links', :method => 'get' %><br>
+<%= button_to 'Home!', user_path(@user), id: 'entries-links', :method => 'get' %>
