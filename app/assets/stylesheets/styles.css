@@ -2,7 +2,7 @@
 @media only screen and (max-width: 750px) {
 
 	html{
-	padding: 2em;
+		padding: 2em;
 	}
 
 	button{
@@ -24,10 +24,15 @@
 
 	label{
 		display: inline;
+		margin-bottom: 1em;
 	}
 
 	.title{
 		font-size: 4em;
+	}
+
+	.field1{
+		vertical-align: top;
 	}
 
 	hr.styler {
