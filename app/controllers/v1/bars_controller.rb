@@ -22,7 +22,7 @@ module V1
 				@user.bars << @bar
 				redirect_to new_user_bar_entry_path(:bar_id => @bar.id)
 			else
-				flash[:notice] = "DUPLICATE!  ENTER ANOTHER"
+				flash[:duplicate] = "DUPLICATE!  ENTER ANOTHER"
 				render :new
 			end
 		end
