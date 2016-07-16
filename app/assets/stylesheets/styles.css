@@ -1,5 +1,25 @@
 
 @media only screen and (max-width: 750px) {
+
+	html{
+	padding: 2em;
+	}
+
+	button{
+		border: 1px solid black;
+	}
+
+	input{
+		border: 2px solid black;
+		background-color: #F5FFFA;
+		margin-bottom: 1em;
+		height: 3em;
+		width: 15em;
+	}
+
+	label{
+		display: inline;
+	}
 	.title{
 		font-size: 4em;
 	}
@@ -38,7 +58,28 @@
 	}
 
 	.index-links{
+		margin-top: 2em;
+	}
+
+	#bar-index-links{
 		margin-top: 3em;
+	}
+
+	#bar-index-input{
+		background: -webkit-linear-gradient(top, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+		width: 10em;
+	}
+
+	#bar-index-remove{
+		background: linear-gradient(to bottom, #2C3E50 , #4CA1AF);
+		width: 10em;
+		color: rgba(255,255,255,0.9);
+	}
+
+	#new-bar-home{
+		width: 10em;
+		background: -webkit-linear-gradient(top, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+
 	}
 
 	ul{
