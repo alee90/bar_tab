@@ -57,3 +57,4 @@ google.maps.event.addDomListener(window, 'load', init);
  //  });
  //  	$("#bar-name-id").geocomplete({ details: "form" });
 })
+;
