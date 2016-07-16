@@ -25,6 +25,7 @@ module BarTabApp
     config.active_record.raise_in_transactional_callbacks = true
     # config.assets.precompile += %w(styles.css)
     config.action_controller.include_all_helpers = false
+    config.serve_static_assets = true
 
   end
 end
