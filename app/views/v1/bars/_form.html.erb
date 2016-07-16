@@ -1,7 +1,7 @@
 <%= form_for Bar.new ,:url => {:action => :create, :controller => :bars} do |form| %>
 <%= form.label :name %>:
-<br> <%= form.text_field :name, id: 'bar-name-id' %><br><br>
-	<%= form.submit %><br>
+<br><br> <%= form.text_field :name, id: 'bar-name-id' %><br>
+	<%= form.submit %>
 <% end %>
 
 <%= javascript_include_tag 'input' %>
