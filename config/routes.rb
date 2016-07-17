@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
+  scope module: :v2 do
+
+  end
+
 end
 
 #                   Prefix Verb   URI Pattern                                               Controller#Action
