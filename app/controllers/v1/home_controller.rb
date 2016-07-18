@@ -2,6 +2,7 @@ module V1
 	class HomeController < ApplicationController
 		before_action :authenticate_user!, only: :home
 
+		#intro route
 		def index
 			if current_user
 				puts "I'm logged in as #{current_user.email}"

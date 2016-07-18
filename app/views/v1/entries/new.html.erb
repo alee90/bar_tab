@@ -1,7 +1,11 @@
 <h1>New Entry</h1>
-<% if flash[:duplicate] %>
-	<div class="notice"><%= flash.now[:duplicate] %></div>
+
+<% if flash.now[:entry] %>
+	<div class="notice"><h4 class='flash'><%= flash.now[:entry] %></h4></div>
 <% end %>
+
+<br><br>
+
 <%= render partial: 'form' %><br>
 
 <%= button_to 'Home!', user_path(@user), id: 'entries-links', :method => 'get' %>

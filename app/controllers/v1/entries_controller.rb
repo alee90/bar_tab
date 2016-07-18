@@ -28,7 +28,7 @@ module V1
 				@bar.entries << @entry
 				redirect_to user_bar_entries_url
 			else
-				flash.now[:notice] = "YOU SPENT TOO MUCH!"
+				flash.now[:entry] = "Invalid Entry, Enter another"
 				render :new
 			end
 		end

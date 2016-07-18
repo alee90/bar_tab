@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  #NAMESPACING with module... separated, allows for scalability
   scope module: :v1 do
     devise_for :users
+    # ==== CUSTOM ROUTES ==== #
     root 'home#index'
     get '/users/:user_id/bars/new', to: 'bars#new', as: 'bar_new'
     put '/users/:user_id/bars/:id/remove' => 'bars#remove_bar', as: 'remove_bar'
     put '/users/:user_id/bars/:bar_id/entries/:id/remove' => 'entries#remove_entry', as: 'remove_entry'
     get '/users/:id' => 'users#show'
     delete '/users/:id/bars/:id', to: 'bars#destroy', as: 'destroy_bar'
+    # ==== RESOURCES ==== #
     resources :users do
       resources :bars do
         resources :entries
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
+  #REACT ON RAILS (eventually)
   scope module: :v2 do
 
   end
