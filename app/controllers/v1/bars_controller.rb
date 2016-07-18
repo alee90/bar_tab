@@ -22,7 +22,7 @@ module V1
 				@user.bars << @bar
 				redirect_to new_user_bar_entry_path(:bar_id => @bar.id)
 			else
-				flash[:duplicate] = "DUPLICATE!  ENTER ANOTHER"
+				flash.now[:duplicate] = "Bar already saved.  Try another"
 				render :new
 			end
 		end

@@ -1,5 +1,5 @@
-<% if flash[:duplicate] %>
-	<div class="notice"><%= flash[:duplicate] %></div>
+<% if flash.now[:duplicate] %>
+	<div class="notice"><h4 class='flash'><%= flash.now[:duplicate] %></h4></div>
 <% end %>
 
 <%= render partial: 'form' %><br>
