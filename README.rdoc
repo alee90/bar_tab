@@ -1,12 +1,12 @@
-##Bar Tabber
+#Bar Tabber
 
 https://www.bar-tabber.com
 
-##Description
+###Description
 
 Full CRUD app built using Ruby on Rails that allows user to keep tally of expenditures at specific bars.
 
-##Tech Used / Stack
+###Tech Used / Stack
 
 Ruby on Rails
 -Devise
@@ -17,7 +17,7 @@ Ruby on Rails
 -Bootstrap
 -PostgreSQL
 
-##Features
+###Features
 -Users can create individual bar entries and save them to SQL
 -Users can add "expenditure" entries, which is stored on SQL.
 -Users can see aggregate expenditures on page.
@@ -25,7 +25,7 @@ Ruby on Rails
 -Devise is fully setup, along with email helpers in case of lost password, etc...
 -App truly meant for mobile use.
 
-##Future Implementations
+###Future Implementations
 -React on Rails (v2)
 -Email blasts/text messaging where app will tally total day's spending and send to user.
 -Swift/iOS implementation (v3)
