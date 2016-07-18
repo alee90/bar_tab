@@ -1,6 +1,6 @@
 #Bar Tabber
 
-https://www.bar-tabber.com
+www.bar-tabber.com
 
 ###Description
 
