@@ -1,75 +1,31 @@
-Final Project... 
+##Bar Tabber
 
-Bar Tab
------------
-- be able to 'check in' to a bar via 4sq OR YELP search query (to get official name of place, etc...)... save name to user db >> these saved to USER DB via devise.
-- be able to enter $$ spent per bar.  !!BASIC PRINCIPLE!! 
-- page to access saved db information.  ideally SPA-looky-feely, even if the pages do redirect to other pages (erb).
+https://www.bar-tabber.com
 
-TECH USED (MVP)
-------------
-- Ruby on Rails
-- Front-end JS/jQuery
-- Bootstrap CSS
- 
-what else can i implement into this that would make it better?  Perform better.  React on Rails?  Would like to build working app first before dabbling into this.
+##Description
 
-MAIN OBJECTIVE
---------------
-- FAST APPLICATION.  
->> Main thing here should have the user access his/her information quickly, succinctly.  Only show relevant data.  Performance matters.
->> Ideally, I'd like to use this app myself.  Styling matters.  User flow matters.
+Full CRUD app built using Ruby on Rails that allows user to keep tally of expenditures at specific bars.
 
-FLOW (TRUE MOBILE FEEL - NO DESKTOP ALLOWED [or allow access to db information via desktop ONLY?])
-----------------
-1. AUTH (DEVISE)
+##Tech Used / Stack
 
-2. HOME PAGE
-	2a: NEW ENTRY
-	2b: SAVED INFORMATION ON ANOTHER PAGE
+Ruby on Rails
+-Devise
+-Javascript
+-Google Places API
+-HTML5
+-CSS3
+-Bootstrap
+-PostgreSQL
 
-3. NEW ENTRY
-	- QUERY TO SEARCH BAR (FOURSQUARE API, DOESN'T REQUIRE 0AUTH TO QUERY)
-	- USER CAN TYPE IN NAME OF BAR (autofill would be really nice, if 4SQ allows)
-	- WHEN YOU CLICK 'GO', BAR NAME SAVES INTO DB, GO TO 'SHOW'
-		>> SHOW CONSISTS OF BAR NAME AND TOTAL $ SPENT, AS WELL AS A DATE AND $ SPENT PER DATE.
-			>> DO I ALLOW USER TO ENTER INDIVIDUAL DRINKS PURCHASED?  WOULD PROVIDE INTERESTING DATA AS TO WHAT MOST POPULAR DRINK IS PER PLACE?  WOULD THIS POLLUTE THE SPEED I'M SEARCHING FOR?  POLLUTE THE PAGE. 
-			>> AFTER USER ENTERS $ SPENT, NEW ENTRY CREATED WITH REGARDS TO SPECIFIC DATE/$ DATA.
-				>> REDIRECT TO 'DB'
+##Features
+-Users can create individual bar entries and save them to SQL
+-Users can add "expenditure" entries, which is stored on SQL.
+-Users can see aggregate expenditures on page.
+-Versioned API, meaning that there is scalability.
+-Devise is fully setup, along with email helpers in case of lost password, etc...
+-App truly meant for mobile use.
 
-4. SAVED DATA
-	- USER SHOULD BE ABLE TO SEE EVERY BAR SAVED AS WELL AS DATE QUERIED.  
-		>> TOTAL SPENT SHOULD HEADLINE EACH 'DIV'.  
-			>> BELOW (OR ON CLICK) SHOULD BE ABLE TO SEE EACH RELEVANT DATA ($ SPENT PER SPECIFIC DATE)
-
-5. CRUD?
-	- USER SHOULD BE ABLE TO...
-		>> CREATE ENTRY
-		>> READ ENTRY
-		>> NO UPDATE (JUST DELETE AND RE-ENTER)
-		>> DELETE ENTRY 
-
-6. MOBILE
-	- SET MAX DIMENSIONS TO IPHONE6+ SCREEN SIZE (1334 x 750) 
-		>> SHOULD BE SCALABLE ON DIFFERENT SCREENS
-		>> INPUTS NEED TO BE LARGE BUT NOT GIANORMOUS
-		>> BUTTONS NEED TO BE LARGE BUT NOT GIANORMOUS
-		>> ACCESSIBILITY IS KEY!
-
-MVP
-------
-1. FULLY FUNCTIONAL R.O.R + JS + BOOTSTRAP MOBILE APP WHICH ALLOWS USER TO SAVE $ SPENT PER BAR USING 4SQ OR YELP SEARCH API 
-
-BONUS
-------
-1. ALLOW USER TO SAVE INDIVIDUAL DRINKS AND KEEP A COUNTER OF MOST POPULAR DRINK ORDERED PER PLACE
-	1A: ISSUE IS -- DOES APP LOOK TOO CLUTTERED?  WOULD RATHER TACKLE OTHER THINGS.
-2. STYLE THE HELL OUT OF IT.  D3?  
-3. AWS DEPLOYMENT.  I ACTUALLY WANT TO USE THIS FOR REAL.
-4. ANGULAR?  MAKE THIS A TRUE SPA VIA REACT/ANGULAR.  
-
-MISC
--------
-1. SHOULD $ DATA BE SAVED IN DEVISE USER MODEL OR SEPARATE TABLE?  ALMOST TEMPTED TO USE MONGO FOR THIS JUST BC RELATIONAL DATA ISN'T SO AWFUL.  BUT SQL IS GREAT TOO BECAUSE NOT MUCH DATA BEING SAVED.  ALMOST DOESN'T MATTER.
-2. AWS VS HEROKU.  WHICH IS BETTER?  I WANT TO JUST GO FOR ONE AND BE DONE WITH IT.
-
+##Future Implementations
+-React on Rails (v2)
+-Email blasts/text messaging where app will tally total day's spending and send to user.
+-Swift/iOS implementation (v3)
