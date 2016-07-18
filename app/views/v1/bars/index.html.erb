@@ -8,7 +8,9 @@
 	<% end %>
 	<% tot = '%.2f' % total %>
 	<li><h3>Total Spent:</h3><h4>$<%= tot %></h4></li>
-	<li><%= button_to "Remove", remove_bar_path(user_id: @user.id, id: bar.id), id: 'bar-index-remove', data: { confirm: "Are you sure?" }, :method => 'put' %></li><br>
+
+	<li><%= button_to "Remove", destroy_bar_path(user_id: @user.id, id: bar.id), id: 'bar-index-remove', data: { confirm: "Are you sure?" }, :method => 'delete' %></li><br>
+
 <% end %>
 </ul>
 <div id='bar-index-links'>

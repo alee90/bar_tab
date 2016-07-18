@@ -39,15 +39,17 @@ module V1
 		end
 
 		def destroy
+			@user = User.find(params[:user_id])
+			@bar = Bar.find(params[:id])
 			@bar.destroy
-			redirect_to users_url
+			redirect_to user_path(@user)
 		end
 
-		def remove_bar
-			user = User.find(params[:user_id])
-			user.bars.delete(@bar)
-			redirect_to user_bars_path
-		end
+		# def remove_bar
+		# 	user = User.find(params[:user_id])
+		# 	user.bars.delete(@bar)
+		# 	redirect_to user_bars_path
+		# end
 
 
 		# PRIVATE METHODS

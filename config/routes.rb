@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     put '/users/:user_id/bars/:id/remove' => 'bars#remove_bar', as: 'remove_bar'
     put '/users/:user_id/bars/:bar_id/entries/:id/remove' => 'entries#remove_entry', as: 'remove_entry'
     get '/users/:id' => 'users#show'
+    delete '/users/:id/bars/:id', to: 'bars#destroy', as: 'destroy_bar'
     resources :users do
       resources :bars do
         resources :entries
